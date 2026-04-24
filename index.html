@@ -6,83 +6,66 @@
   <style>
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #4facfe, #00f2fe);
-      transition: 0.3s;
-    }
-
-    body.dark {
-      background: #121212;
-      color: white;
+      color: #333;
     }
 
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 25px;
-      color: white;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .toggle {
-      cursor: pointer;
-      padding: 8px 12px;
-      background: white;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      color: black;
-    }
-
-    .search-box {
       text-align: center;
-      margin: 20px;
+      padding: 25px;
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      letter-spacing: 1px;
     }
 
-    .search-box input {
-      width: 300px;
-      padding: 10px;
-      border-radius: 25px;
-      border: none;
-      outline: none;
-      font-size: 1rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       gap: 25px;
-      padding: 20px;
+      padding: 40px 20px;
     }
 
     .card {
+      width: 350px;
       background: white;
-      padding: 20px;
       border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      cursor: pointer;
+      padding: 20px;
+      text-align: left;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
       transition: 0.3s;
-    }
-
-    body.dark .card {
-      background: #1e1e1e;
+      text-decoration: none;
+      color: inherit;
     }
 
     .card:hover {
-      transform: scale(1.05);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    }
+
+    .icon {
+      font-size: 2rem;
     }
 
     .title {
-      font-weight: bold;
+      font-size: 1.3rem;
+      font-weight: 600;
       margin: 10px 0;
     }
 
-    .viewer {
-      width: 100%;
-      height: 500px;
-      border: none;
-      margin-top: 20px;
+    .desc {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: white;
+      font-size: 0.9rem;
     }
 
   </style>
@@ -90,53 +73,35 @@
 
 <body>
 
-<header>
-  📚 Veterinary Library
-  <div class="toggle" onclick="toggleMode()">🌙 Toggle</div>
-</header>
+  <header>
+    📚 Veterinary Book Library
+  </header>
 
-<div class="search-box">
-  <input type="text" id="search" placeholder="Search books..." onkeyup="filterBooks()">
-</div>
+  <div class="container">
 
-<div class="grid" id="bookList">
+    <a class="card" href="https://saravananEditions.github.io/BookStore/Trends%20and%20Challenges%20in%20Veterinary%20Profession.pdf" target="_blank">
+      <div class="icon">📘</div>
+      <div class="title">Trends & Challenges in Veterinary Profession</div>
+      <div class="desc">Explore insights, challenges, and future trends in veterinary science.</div>
+    </a>
 
-  <div class="card" onclick="openBook('https://saravananEditions.github.io/BookStore/Trends%20and%20Challenges%20in%20Veterinary%20Profession.pdf')">
-    📘 <div class="title">Trends & Challenges</div>
+    <a class="card" href="https://saravananEditions.github.io/BookStore/Sheep%20Farming%20-%20Volume%20I.pdf" target="_blank">
+      <div class="icon">🐑</div>
+      <div class="title">Sheep Farming - Volume I</div>
+      <div class="desc">Basics, management practices, and foundational knowledge.</div>
+    </a>
+
+    <a class="card" href="https://saravananEditions.github.io/BookStore/Sheep%20Farming%20-%20Volume%20II.pdf" target="_blank">
+      <div class="icon">🐑</div>
+      <div class="title">Sheep Farming - Volume II</div>
+      <div class="desc">Advanced techniques, disease control, and productivity tips.</div>
+    </a>
+
   </div>
 
-  <div class="card" onclick="openBook('https://saravananEditions.github.io/BookStore/Sheep%20Farming%20-%20Volume%20I.pdf')">
-    🐑 <div class="title">Sheep Farming Vol I</div>
-  </div>
-
-  <div class="card" onclick="openBook('https://saravananEditions.github.io/BookStore/Sheep%20Farming%20-%20Volume%20II.pdf')">
-    🐑 <div class="title">Sheep Farming Vol II</div>
-  </div>
-
-</div>
-
-<iframe id="viewer" class="viewer"></iframe>
-
-<script>
-  function openBook(url) {
-    document.getElementById("viewer").src = url;
-    window.scrollTo({ top: 600, behavior: 'smooth' });
-  }
-
-  function toggleMode() {
-    document.body.classList.toggle("dark");
-  }
-
-  function filterBooks() {
-    let input = document.getElementById("search").value.toLowerCase();
-    let cards = document.querySelectorAll(".card");
-
-    cards.forEach(card => {
-      let text = card.innerText.toLowerCase();
-      card.style.display = text.includes(input) ? "block" : "none";
-    });
-  }
-</script>
+  <footer>
+    © 2026 Veterinary Knowledge Hub
+  </footer>
 
 </body>
 </html>
