@@ -7,39 +7,67 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #FFFFFF;
-      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: #333;
     }
 
     header {
-      background-color: #1E90FF;
-      color: white;
-      padding: 15px;
-      font-size: 1.6rem;
+      text-align: center;
+      padding: 25px;
+      font-size: 2rem;
       font-weight: bold;
+      color: white;
+      letter-spacing: 1px;
     }
 
     .container {
-      margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      padding: 40px 20px;
     }
 
-    .btn {
-      display: block;
-      width: 320px;
-      margin: 20px auto;
-      padding: 15px;
-      background-color: #1E90FF;
-      color: white;
-      text-decoration: none;
-      font-size: 1.1rem;
-      border-radius: 8px;
+    .card {
+      width: 350px;
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: left;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
       transition: 0.3s;
+      text-decoration: none;
+      color: inherit;
     }
 
-    .btn:hover {
-      background-color: #0f6edc;
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
     }
+
+    .icon {
+      font-size: 2rem;
+    }
+
+    .title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 10px 0;
+    }
+
+    .desc {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: white;
+      font-size: 0.9rem;
+    }
+
   </style>
 </head>
 
@@ -51,25 +79,29 @@
 
   <div class="container">
 
-    <a class="btn" 
-       href="https://saravananEditions.github.io/BookStore/Trends%20and%20Challenges%20in%20Veterinary%20Profession.pdf" 
-       target="_blank">
-       📘 Trends & Challenges in Veterinary Profession
+    <a class="card" href="https://saravananEditions.github.io/BookStore/Trends%20and%20Challenges%20in%20Veterinary%20Profession.pdf" target="_blank">
+      <div class="icon">📘</div>
+      <div class="title">Trends & Challenges in Veterinary Profession</div>
+      <div class="desc">Explore insights, challenges, and future trends in veterinary science.</div>
     </a>
 
-    <a class="btn" 
-       href="https://saravananEditions.github.io/BookStore/Sheep%20Farming%20-%20Volume%20I.pdf" 
-       target="_blank">
-       🐑 Sheep Farming - Volume I
+    <a class="card" href="https://saravananEditions.github.io/BookStore/Sheep%20Farming%20-%20Volume%20I.pdf" target="_blank">
+      <div class="icon">🐑</div>
+      <div class="title">Sheep Farming - Volume I</div>
+      <div class="desc">Basics, management practices, and foundational knowledge.</div>
     </a>
 
-    <a class="btn" 
-       href="https://saravananEditions.github.io/BookStore/Sheep%20Farming%20-%20Volume%20II.pdf" 
-       target="_blank">
-       🐑 Sheep Farming - Volume II
+    <a class="card" href="https://saravananEditions.github.io/BookStore/Sheep%20Farming%20-%20Volume%20II.pdf" target="_blank">
+      <div class="icon">🐑</div>
+      <div class="title">Sheep Farming - Volume II</div>
+      <div class="desc">Advanced techniques, disease control, and productivity tips.</div>
     </a>
 
   </div>
+
+  <footer>
+    © 2026 Veterinary Knowledge Hub
+  </footer>
 
 </body>
 </html>
